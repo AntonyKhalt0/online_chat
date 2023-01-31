@@ -1,0 +1,5 @@
+= turbo_stream_from :chats
+h1 Chats
+p= link_to "New chat", new_chat_path
+= turbo_frame_tag :chats do
+  = render @chats

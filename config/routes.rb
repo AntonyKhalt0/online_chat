@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'chats#index'
+  resources :chats, only: [:show, :new, :create] do
+    resources :messages, only: [:create], shallow: true
+  end
 end

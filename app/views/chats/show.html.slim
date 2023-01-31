@@ -1,0 +1,11 @@
+= turbo_stream_from @chat
+h1= @chat.title
+= turbo_frame_tag :messages do
+  = render @messages
+
+= form_with model: [@chat, @message], local: false do |f|
+  p
+    = f.label :text
+    = f.text_field :text
+  p
+    = f.submit "Send"
